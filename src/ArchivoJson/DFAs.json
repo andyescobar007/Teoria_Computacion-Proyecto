@@ -1,0 +1,820 @@
+[
+  {
+    "descripcion": "ANDY",
+    "validaSubString": true,
+    "estados": [
+      "q0",
+      "q1"
+    ],
+    "alfabeto": [
+      "a",
+      "b"
+    ],
+    "estadosAceptacion": [
+      "q0"
+    ],
+    "estadoInicial": "q0",
+    "estadoActual": "q0",
+    "Transiciones": [
+      {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q0"
+      },
+      {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q0"
+      },
+      {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q1"
+      }
+    ],
+    "transiciones": {
+      "b,q0": {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q0"
+      },
+      "a,q0": {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      "a,q1": {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q0"
+      },
+      "b,q1": {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q1"
+      }
+    }
+  },
+  {
+    "descripcion": "ANDY",
+    "validaSubString": true,
+    "estados": [
+      "q0",
+      "q1"
+    ],
+    "alfabeto": [
+      "a",
+      "b"
+    ],
+    "estadosAceptacion": [
+      "q0"
+    ],
+    "estadoInicial": "q0",
+    "estadoActual": "q0",
+    "Transiciones": [
+      {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q0"
+      },
+      {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q0"
+      },
+      {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q1"
+      }
+    ],
+    "transiciones": {
+      "b,q0": {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q0"
+      },
+      "a,q0": {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      "a,q1": {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q0"
+      },
+      "b,q1": {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q1"
+      }
+    }
+  },
+  {
+    "descripcion": "ANDY",
+    "validaSubString": true,
+    "estados": [
+      "q0",
+      "q1"
+    ],
+    "alfabeto": [
+      "a",
+      "b"
+    ],
+    "estadosAceptacion": [
+      "q0"
+    ],
+    "estadoInicial": "q0",
+    "estadoActual": "q0",
+    "Transiciones": [
+      {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q0"
+      },
+      {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q0"
+      },
+      {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q1"
+      }
+    ],
+    "transiciones": {
+      "b,q0": {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q0"
+      },
+      "a,q0": {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      "a,q1": {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q0"
+      },
+      "b,q1": {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q1"
+      }
+    }
+  },
+  {
+    "descripcion": "ANDY",
+    "validaSubString": true,
+    "estados": [
+      "q0",
+      "q1"
+    ],
+    "alfabeto": [
+      "a",
+      "b"
+    ],
+    "estadosAceptacion": [
+      "q0"
+    ],
+    "estadoInicial": "q0",
+    "estadoActual": "q0",
+    "Transiciones": [
+      {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q0"
+      },
+      {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q0"
+      },
+      {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q1"
+      }
+    ],
+    "transiciones": {
+      "b,q0": {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q0"
+      },
+      "a,q0": {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      "a,q1": {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q0"
+      },
+      "b,q1": {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q1"
+      }
+    }
+  },
+  {
+    "descripcion": "ANDY",
+    "validaSubString": true,
+    "estados": [
+      "q0",
+      "q1",
+      "q2"
+    ],
+    "alfabeto": [
+      "a",
+      "b"
+    ],
+    "estadosAceptacion": [
+      "q0",
+      "q2"
+    ],
+    "estadoInicial": "q0",
+    "estadoActual": "q0",
+    "Transiciones": [
+      {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q2"
+      },
+      {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q2"
+      },
+      {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q0"
+      },
+      {
+        "startState": "q2",
+        "input": "a",
+        "newState": "q0"
+      },
+      {
+        "startState": "q2",
+        "input": "b",
+        "newState": "q1"
+      }
+    ],
+    "transiciones": {
+      "a,q2": {
+        "startState": "q2",
+        "input": "a",
+        "newState": "q0"
+      },
+      "b,q0": {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q2"
+      },
+      "a,q0": {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      "b,q2": {
+        "startState": "q2",
+        "input": "b",
+        "newState": "q1"
+      },
+      "a,q1": {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q2"
+      },
+      "b,q1": {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q0"
+      }
+    }
+  },
+  {
+    "descripcion": "ANDY",
+    "validaSubString": true,
+    "estados": [
+      "q0",
+      "q1"
+    ],
+    "alfabeto": [
+      "a",
+      "b"
+    ],
+    "estadosAceptacion": [
+      "q0"
+    ],
+    "estadoInicial": "q0",
+    "estadoActual": "q0",
+    "Transiciones": [
+      {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q0"
+      },
+      {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q1"
+      },
+      {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q1"
+      },
+      {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q0"
+      }
+    ],
+    "transiciones": {
+      "b,q0": {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q1"
+      },
+      "a,q0": {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q0"
+      },
+      "a,q1": {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q1"
+      },
+      "b,q1": {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q0"
+      }
+    }
+  },
+  {
+    "descripcion": "ANDY",
+    "validaSubString": true,
+    "estados": [
+      "q0",
+      "q1"
+    ],
+    "alfabeto": [
+      "a",
+      "b"
+    ],
+    "estadosAceptacion": [
+      "q1"
+    ],
+    "estadoInicial": "q0",
+    "estadoActual": "q0",
+    "Transiciones": [
+      {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q0"
+      },
+      {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q1"
+      },
+      {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q1"
+      },
+      {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q0"
+      }
+    ],
+    "transiciones": {
+      "b,q0": {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q1"
+      },
+      "a,q0": {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q0"
+      },
+      "a,q1": {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q1"
+      },
+      "b,q1": {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q0"
+      }
+    }
+  },
+  {
+    "descripcion": "ANDY",
+    "validaSubString": true,
+    "estados": [
+      "q1",
+      "q2"
+    ],
+    "alfabeto": [
+      "a",
+      "b"
+    ],
+    "estadosAceptacion": [
+      "q1"
+    ],
+    "estadoInicial": "q1",
+    "estadoActual": "q1",
+    "Transiciones": [
+      {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q1"
+      },
+      {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q2"
+      },
+      {
+        "startState": "q2",
+        "input": "a",
+        "newState": "q2"
+      },
+      {
+        "startState": "q2",
+        "input": "b",
+        "newState": "q1"
+      }
+    ],
+    "transiciones": {
+      "a,q2": {
+        "startState": "q2",
+        "input": "a",
+        "newState": "q2"
+      },
+      "b,q2": {
+        "startState": "q2",
+        "input": "b",
+        "newState": "q1"
+      },
+      "a,q1": {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q1"
+      },
+      "b,q1": {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q2"
+      }
+    }
+  },
+  {
+    "descripcion": "ANDY",
+    "validaSubString": true,
+    "estados": [
+      "q0",
+      "q1"
+    ],
+    "alfabeto": [
+      "a",
+      "b"
+    ],
+    "estadosAceptacion": [
+      "q0"
+    ],
+    "estadoInicial": "q0",
+    "estadoActual": "q0",
+    "Transiciones": [
+      {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q0"
+      },
+      {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q1"
+      },
+      {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q0"
+      }
+    ],
+    "transiciones": {
+      "b,q0": {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q0"
+      },
+      "a,q0": {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      "a,q1": {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q1"
+      },
+      "b,q1": {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q0"
+      }
+    }
+  },
+  {
+    "descripcion": "ANDY",
+    "validaSubString": true,
+    "estados": [
+      "q0",
+      "q1",
+      "q2"
+    ],
+    "alfabeto": [
+      "a",
+      "b"
+    ],
+    "estadosAceptacion": [
+      "q0",
+      "q2"
+    ],
+    "estadoInicial": "q0",
+    "estadoActual": "q0",
+    "Transiciones": [
+      {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q2"
+      },
+      {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q2"
+      },
+      {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q0"
+      },
+      {
+        "startState": "q2",
+        "input": "a",
+        "newState": "q0"
+      },
+      {
+        "startState": "q2",
+        "input": "b",
+        "newState": "q1"
+      }
+    ],
+    "transiciones": {
+      "a,q2": {
+        "startState": "q2",
+        "input": "a",
+        "newState": "q0"
+      },
+      "b,q0": {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q2"
+      },
+      "a,q0": {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      "b,q2": {
+        "startState": "q2",
+        "input": "b",
+        "newState": "q1"
+      },
+      "a,q1": {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q2"
+      },
+      "b,q1": {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q0"
+      }
+    }
+  },
+  {
+    "descripcion": "ANDY",
+    "validaSubString": true,
+    "estados": [
+      "q0",
+      "q1",
+      "q2"
+    ],
+    "alfabeto": [
+      "a",
+      "b"
+    ],
+    "estadosAceptacion": [
+      "q0"
+    ],
+    "estadoInicial": "q0",
+    "estadoActual": "q0",
+    "Transiciones": [
+      {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q2"
+      },
+      {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q2"
+      },
+      {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q0"
+      },
+      {
+        "startState": "q2",
+        "input": "a",
+        "newState": "q0"
+      },
+      {
+        "startState": "q2",
+        "input": "b",
+        "newState": "q1"
+      }
+    ],
+    "transiciones": {
+      "a,q2": {
+        "startState": "q2",
+        "input": "a",
+        "newState": "q0"
+      },
+      "b,q0": {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q2"
+      },
+      "a,q0": {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      "b,q2": {
+        "startState": "q2",
+        "input": "b",
+        "newState": "q1"
+      },
+      "a,q1": {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q2"
+      },
+      "b,q1": {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q0"
+      }
+    }
+  },
+  {
+    "descripcion": "ANDY",
+    "validaSubString": true,
+    "estados": [
+      "q0",
+      "q1",
+      "q2"
+    ],
+    "alfabeto": [
+      "a",
+      "b"
+    ],
+    "estadosAceptacion": [
+      "q0"
+    ],
+    "estadoInicial": "q0",
+    "estadoActual": "q0",
+    "Transiciones": [
+      {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q2"
+      },
+      {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q2"
+      },
+      {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q0"
+      },
+      {
+        "startState": "q2",
+        "input": "a",
+        "newState": "q0"
+      },
+      {
+        "startState": "q2",
+        "input": "b",
+        "newState": "q2"
+      }
+    ],
+    "transiciones": {
+      "a,q2": {
+        "startState": "q2",
+        "input": "a",
+        "newState": "q0"
+      },
+      "b,q0": {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q2"
+      },
+      "a,q0": {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1"
+      },
+      "b,q2": {
+        "startState": "q2",
+        "input": "b",
+        "newState": "q2"
+      },
+      "a,q1": {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q2"
+      },
+      "b,q1": {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q0"
+      }
+    }
+  }
+]
