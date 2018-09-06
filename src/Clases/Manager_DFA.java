@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,6 +26,7 @@ public class Manager_DFA {
     public Manager_DFA(JsonFile jsonFile){
         this.listDFA=new DFA[1];
         this.jsonFile=jsonFile;
+        cargar();
     }
     
     public Manager_DFA(ArrayList<DFA> arrayDFA){
@@ -32,6 +34,10 @@ public class Manager_DFA {
     }
    
     public void addNewDFA(String descripcion,boolean substring,DFA newDFA){
+        if(findDFA(descripcion)!=null){
+            JOptionPane.showMessageDialog(null,"Ya existe un AFD con exa descripcion");
+            return;
+        }
         newDFA.setDescripcion(descripcion);
         newDFA.setValidaSubString(substring);
         try {
@@ -58,6 +64,7 @@ public class Manager_DFA {
     
     public DFA findDFA(String description){
         try {
+            cargar();
             BufferedReader br =new BufferedReader(new FileReader(jsonFile.getArchivo()));
             Gson gson=new Gson();
             DFA[] arrayDFA=gson.fromJson(br, DFA[].class);
@@ -72,6 +79,18 @@ public class Manager_DFA {
         
         return null;
     }
+
+    public DFA[] getListDFA() {
+        return listDFA;
+    }
     
-    
+    public void cargar(){
+        try {
+            BufferedReader br=new BufferedReader(new FileReader(jsonFile.getArchivo()));
+            Gson gson=new Gson();
+            listDFA=gson.fromJson(br, DFA[].class);
+        }catch (FileNotFoundException ex) {
+            Logger.getLogger(Manager_DFA.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

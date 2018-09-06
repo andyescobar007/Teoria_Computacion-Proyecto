@@ -154,6 +154,16 @@ public class DFA {
     public Transicion[] getTransiciones() {
         return Transiciones;
     }
+    
+    public Transicion getTransicion(String estado,String input){
+        for(Transicion t:getTransiciones()){
+            if(t.getStartState().equals(estado)&&t.getInput().equals(input)){
+                return t;
+            }
+        }
+        return null;
+    
+    }
 
     public void setTransiciones(Transicion[] Transiciones) {
         this.Transiciones = Transiciones;

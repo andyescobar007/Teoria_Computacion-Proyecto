@@ -1,6 +1,7 @@
 package Clases;
 
 
+import Main.MenuPrincipal;
 import java.awt.Color;
 import java.awt.Component;
 import java.io.BufferedReader;
@@ -28,6 +29,7 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
     DFA dfa;
     String[] estados;
     private String OPTION;
+    public final String vacio="ø";
    
     
     /**
@@ -35,8 +37,10 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
      */
     public JF_MenuPrincipal() {
         initComponents();
+        
         this.setLocationRelativeTo(null);
         cargarDirectorios();
+        cargarComboBox();
        // updateRowHeight();
         jPanel2.setVisible(false);
         jPanel3.setVisible(false);
@@ -55,6 +59,7 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
         barPanel = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         lblAFD = new javax.swing.JLabel();
+        lblnfa = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
         pnlAFD = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -72,6 +77,7 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnCrearDFA = new javax.swing.JButton();
+        btnGuardarDFA = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         btnGenerar = new javax.swing.JButton();
@@ -84,6 +90,32 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
         cmbTextFile = new javax.swing.JComboBox<>();
         btnEvaluarArchivo = new javax.swing.JButton();
         ck_contentSubstring = new javax.swing.JCheckBox();
+        cmbListDFA = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        pnlAFND = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        txtStates_NFA = new javax.swing.JTextField();
+        txtAlfabeto_NFA = new javax.swing.JTextField();
+        txtEstadosAceptacion_NFA = new javax.swing.JTextField();
+        txtEstadoInicial_NFA = new javax.swing.JTextField();
+        pnlNFAtable = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        btnCrearDFA1 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        btnGenerar_NFA = new javax.swing.JButton();
+        lblCountEstados = new javax.swing.JLabel();
+        pnlDFAtable = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
@@ -95,6 +127,7 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("X");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -112,24 +145,38 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        lblnfa.setBackground(new java.awt.Color(204, 204, 204));
+        lblnfa.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblnfa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblnfa.setText("AFND");
+        lblnfa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblnfaMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout barPanelLayout = new javax.swing.GroupLayout(barPanel);
         barPanel.setLayout(barPanelLayout);
         barPanelLayout.setHorizontalGroup(
             barPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barPanelLayout.createSequentialGroup()
-                .addGap(89, 89, 89)
+                .addGap(90, 90, 90)
                 .addComponent(lblAFD, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1024, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblnfa, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 911, Short.MAX_VALUE)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         barPanelLayout.setVerticalGroup(
             barPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(barPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblnfa, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAFD, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(barPanelLayout.createSequentialGroup()
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblAFD, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -156,6 +203,11 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
         jLabel5.setText("s");
 
         txtStates.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtStates.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtStatesActionPerformed(evt);
+            }
+        });
         txtStates.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtStatesKeyReleased(evt);
@@ -197,6 +249,14 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnGuardarDFA.setBackground(new java.awt.Color(255, 255, 255));
+        btnGuardarDFA.setText("Guardar");
+        btnGuardarDFA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarDFAActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -204,11 +264,13 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCrearDFA))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 655, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(btnGuardarDFA)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCrearDFA)))
                 .addGap(21, 21, 21))
         );
         jPanel2Layout.setVerticalGroup(
@@ -217,7 +279,9 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnCrearDFA)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCrearDFA)
+                    .addComponent(btnGuardarDFA))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -318,6 +382,22 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
+        cmbListDFA.setBackground(new java.awt.Color(255, 255, 255));
+        cmbListDFA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbListDFA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbListDFAActionPerformed(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Cargar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlAFDLayout = new javax.swing.GroupLayout(pnlAFD);
         pnlAFD.setLayout(pnlAFDLayout);
         pnlAFDLayout.setHorizontalGroup(
@@ -348,7 +428,11 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(pnlAFDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btnGenerar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtEstadoInicial, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))))
+                                    .addComponent(txtEstadoInicial, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAFDLayout.createSequentialGroup()
+                                        .addComponent(cmbListDFA, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButton1)))))
                         .addGap(1, 1, 1)
                         .addComponent(txtStatecount, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(16, 16, 16)
@@ -402,8 +486,15 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
                             .addGroup(pnlAFDLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(1, 1, 1)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlAFDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlAFDLayout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlAFDLayout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addGroup(pnlAFDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cmbListDFA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton1)))))
                     .addGroup(pnlAFDLayout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -411,6 +502,255 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
         );
 
         mainPanel.add(pnlAFD, "card2");
+
+        pnlAFND.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel9.setText("Entradas");
+
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel10.setText("Q");
+
+        jLabel11.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel11.setText("Σ");
+
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel12.setText("F");
+
+        jLabel13.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel13.setText("s");
+
+        txtStates_NFA.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtStates_NFA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtStates_NFAActionPerformed(evt);
+            }
+        });
+        txtStates_NFA.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtStates_NFAKeyReleased(evt);
+            }
+        });
+
+        txtAlfabeto_NFA.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+
+        txtEstadosAceptacion_NFA.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+
+        txtEstadoInicial_NFA.setEditable(false);
+        txtEstadoInicial_NFA.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+
+        pnlNFAtable.setBackground(new java.awt.Color(255, 255, 255));
+        pnlNFAtable.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTable2.setBackground(new java.awt.Color(255, 255, 255));
+        jTable2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable2);
+
+        btnCrearDFA1.setBackground(new java.awt.Color(255, 255, 255));
+        btnCrearDFA1.setText("Crear DFA");
+        btnCrearDFA1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearDFA1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlNFAtableLayout = new javax.swing.GroupLayout(pnlNFAtable);
+        pnlNFAtable.setLayout(pnlNFAtableLayout);
+        pnlNFAtableLayout.setHorizontalGroup(
+            pnlNFAtableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlNFAtableLayout.createSequentialGroup()
+                .addGroup(pnlNFAtableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlNFAtableLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE))
+                    .addGroup(pnlNFAtableLayout.createSequentialGroup()
+                        .addGap(54, 596, Short.MAX_VALUE)
+                        .addComponent(btnCrearDFA1)))
+                .addGap(21, 21, 21))
+        );
+        pnlNFAtableLayout.setVerticalGroup(
+            pnlNFAtableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlNFAtableLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCrearDFA1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel14.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel14.setText("Tabla de Transicion");
+
+        btnGenerar_NFA.setBackground(new java.awt.Color(255, 255, 255));
+        btnGenerar_NFA.setText("Generar");
+        btnGenerar_NFA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerar_NFAActionPerformed(evt);
+            }
+        });
+
+        lblCountEstados.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblCountEstados.setText(" ");
+
+        pnlDFAtable.setBackground(new java.awt.Color(255, 255, 255));
+        pnlDFAtable.setBorder(javax.swing.BorderFactory.createTitledBorder("AFD"));
+
+        jScrollPane5.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTable4.setBackground(new java.awt.Color(255, 255, 255));
+        jTable4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable4);
+
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Guardar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlDFAtableLayout = new javax.swing.GroupLayout(pnlDFAtable);
+        pnlDFAtable.setLayout(pnlDFAtableLayout);
+        pnlDFAtableLayout.setHorizontalGroup(
+            pnlDFAtableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDFAtableLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 655, Short.MAX_VALUE)
+                .addGap(21, 21, 21))
+            .addGroup(pnlDFAtableLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlDFAtableLayout.setVerticalGroup(
+            pnlDFAtableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDFAtableLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout pnlAFNDLayout = new javax.swing.GroupLayout(pnlAFND);
+        pnlAFND.setLayout(pnlAFNDLayout);
+        pnlAFNDLayout.setHorizontalGroup(
+            pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAFNDLayout.createSequentialGroup()
+                .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlAFNDLayout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlAFNDLayout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(jLabel9))
+                    .addGroup(pnlAFNDLayout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnlAFNDLayout.createSequentialGroup()
+                                .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel12))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtEstadosAceptacion_NFA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtAlfabeto_NFA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtStates_NFA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(pnlAFNDLayout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnGenerar_NFA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtEstadoInicial_NFA, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))))
+                        .addGap(1, 1, 1)
+                        .addComponent(lblCountEstados, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(16, 16, 16)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlAFNDLayout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAFNDLayout.createSequentialGroup()
+                        .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator6)
+                            .addComponent(pnlNFAtable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pnlDFAtable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(80, 80, 80))))
+        );
+        pnlAFNDLayout.setVerticalGroup(
+            pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAFNDLayout.createSequentialGroup()
+                .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlAFNDLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel14))
+                        .addGap(5, 5, 5)
+                        .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlAFNDLayout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                    .addComponent(txtStates_NFA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel10)
+                                    .addComponent(lblCountEstados))
+                                .addGap(18, 18, 18)
+                                .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                    .addComponent(jLabel11)
+                                    .addComponent(txtAlfabeto_NFA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(20, 20, 20)
+                                .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                    .addComponent(jLabel12)
+                                    .addComponent(txtEstadosAceptacion_NFA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(pnlAFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                    .addComponent(txtEstadoInicial_NFA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel13))
+                                .addGap(31, 31, 31)
+                                .addComponent(btnGenerar_NFA, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlAFNDLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pnlNFAtable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(pnlDFAtable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pnlAFNDLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(pnlAFND, "card2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -435,6 +775,7 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        new MenuPrincipal().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel8MouseClicked
 
@@ -448,8 +789,6 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
         try{
             jTable1.clearSelection();
             getTransiciones();
-            Manager_DFA manager_DFA=new Manager_DFA(new JsonFile("DFAs"));
-            manager_DFA.addNewDFA("ANDY",true, dfa);
             jPanel3.setVisible(true);
             JOptionPane.showMessageDialog(null, "Tabla de transicion creada exitosamente");
         }catch(NullPointerException e){
@@ -481,6 +820,70 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
     private void txtEntradaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEntradaKeyReleased
         lblMensaje.setVisible(false);
     }//GEN-LAST:event_txtEntradaKeyReleased
+
+    private void txtStatesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStatesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtStatesActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String descripcion_DFA=cmbListDFA.getSelectedItem().toString();
+        Manager_DFA manager_DFA=new Manager_DFA(new JsonFile("DFAs")); 
+        if(manager_DFA.findDFA(descripcion_DFA)!=null ){
+            DFA temp_dfa=manager_DFA.findDFA(descripcion_DFA);
+            cargarDFA(temp_dfa);
+            dfa=temp_dfa;
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cmbListDFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbListDFAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbListDFAActionPerformed
+
+    private void btnGuardarDFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarDFAActionPerformed
+       guardarDFA();
+    }//GEN-LAST:event_btnGuardarDFAActionPerformed
+
+    private void lblnfaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblnfaMouseClicked
+        selectBotonColor(lblnfa);
+        changePanel(mainPanel,pnlAFND);
+        cargaPanelesNFA();
+    }//GEN-LAST:event_lblnfaMouseClicked
+
+    private void txtStates_NFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStates_NFAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtStates_NFAActionPerformed
+
+    private void txtStates_NFAKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtStates_NFAKeyReleased
+        if(getEstadosNFA().length>0&& !getEstadosNFA()[0].equals("")){
+            lblCountEstados.setText(""+getEstadosNFA().length);
+            lblCountEstados.setVisible(true);
+            
+        }else{
+            lblCountEstados.setVisible(false);
+        }
+        txtEstadoInicial_NFA.setText(getEstadoInicialNFA());
+        
+    }//GEN-LAST:event_txtStates_NFAKeyReleased
+
+    private void btnCrearDFA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearDFA1ActionPerformed
+        pnlDFAtable.setVisible(true);
+       NFA nfa=obtenerNFA();
+        Transicion[] transiciones=nfa.getTransicionesDFA();
+        for(Transicion t:transiciones){
+            System.out.println("Estado: "+t.getStartState()+" Input: "+t.getInput()+" Siguiente Estado: "+t.getNewState());
+        }
+        cargarDFAtoTabla(nfa.convertToDFA());
+        dfa=nfa.convertToDFA();
+    }//GEN-LAST:event_btnCrearDFA1ActionPerformed
+
+    private void btnGenerar_NFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerar_NFAActionPerformed
+        generarTablaNFA();
+        pnlNFAtable.setVisible(true);
+    }//GEN-LAST:event_btnGenerar_NFAActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        guardarDFA();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -517,12 +920,24 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel barPanel;
     private javax.swing.JButton btnCrearDFA;
+    private javax.swing.JButton btnCrearDFA1;
+    private javax.swing.JButton btnCrearDFA2;
     private javax.swing.JButton btnEvaluarArchivo;
     private javax.swing.JButton btnEvaluarCadena;
     private javax.swing.JButton btnGenerar;
+    private javax.swing.JButton btnGenerar_NFA;
+    private javax.swing.JButton btnGuardarDFA;
     private javax.swing.JCheckBox ck_contentSubstring;
+    private javax.swing.JComboBox<String> cmbListDFA;
     private javax.swing.JComboBox<String> cmbTextFile;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -530,35 +945,50 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
     private javax.swing.JLabel lblAFD;
+    private javax.swing.JLabel lblCountEstados;
     private javax.swing.JLabel lblMensaje;
+    private javax.swing.JLabel lblnfa;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel pnlAFD;
+    private javax.swing.JPanel pnlAFND;
+    private javax.swing.JPanel pnlDFAtable;
+    private javax.swing.JPanel pnlNFAtable;
     private javax.swing.JTextField txtAlfabeto;
+    private javax.swing.JTextField txtAlfabeto_NFA;
     private javax.swing.JTextField txtEntrada;
     private javax.swing.JTextField txtEstadoInicial;
+    private javax.swing.JTextField txtEstadoInicial_NFA;
+    private javax.swing.JTextField txtEstadosAceptacion_NFA;
     private javax.swing.JTextField txtEstadosFinales;
     private javax.swing.JLabel txtStatecount;
     private javax.swing.JTextField txtStates;
+    private javax.swing.JTextField txtStates_NFA;
     // End of variables declaration//GEN-END:variables
 
      
     private void resetColorLateralButtons(){
         Color color=new Color(255,255,255);
         lblAFD.setBackground(color);
+        lblnfa.setBackground(color);
     }
     
     private void changePanel(JPanel parent,JPanel son){
@@ -755,6 +1185,169 @@ public class JF_MenuPrincipal extends javax.swing.JFrame {
         return 0;
     }
     
+    private void cargarDFA(DFA Adfa){
+        ///CARGAR DATOS
+        String temp_estados="";
+        btnGenerar.setEnabled(false);
+        int cont=0;
+        for (String estado : Adfa.estados) {
+            temp_estados+=estado;
+            if(cont!=Adfa.estados.length-1){
+                temp_estados+=";";
+            }
+            cont++;
+        }
+        cont=0;
+        String temp_alfabeto="";
+        for (String alphat : Adfa.alfabeto) {
+            temp_alfabeto+=alphat;
+            if(cont!=Adfa.alfabeto.length-1){
+                temp_alfabeto+=",";
+            }
+            cont++;
+        }
+        cont=0;
+        String temp_estadoAcepacion="";
+        for (String estadoA : Adfa.getEstadosAceptacion()) {
+            temp_estadoAcepacion+=estadoA;
+            if(cont!=Adfa.getEstadosAceptacion().length-1){
+                temp_estadoAcepacion+=";";
+            }
+            cont++;
+        }
+        
+        estados=Adfa.estados;
+        txtStates.setText(temp_estados);
+        txtStatecount.setText(""+estados.length);
+        txtStatecount.setVisible(true);
+        txtAlfabeto.setText(temp_alfabeto);
+        txtEstadoInicial.setText(getEstadoInicial());
+        txtEstadosFinales.setText(temp_estadoAcepacion);
+        ck_contentSubstring.setSelected(Adfa.validaSubString);
+        /// generar Tabla
+        cargarEstadosToTabla();
+        
+        
+        //cargar datos en la tabla
+       
+        int columnas=jTable1.getColumnCount();
+        int filas=jTable1.getModel().getRowCount();
+        for (int i = 0; i < filas; i++) {
+            for (int j = 1; j < columnas; j++){
+                String tmp_estado=jTable1.getValueAt(i,0).toString();
+                String tmp_input=jTable1.getColumnName(j);
+                
+                jTable1.setValueAt(Adfa.getTransicion(tmp_estado,tmp_input).getNewState(), i, j);
+            }
+        }
+        jPanel2.setVisible(true);
+        jPanel3.setVisible(true);
+     
+    }
+       
+    private void cargarComboBox(){
+        cmbListDFA.removeAllItems();
+        Manager_DFA manager_DFA=new Manager_DFA(new JsonFile("DFAs"));
+        manager_DFA.cargar();
+        for(DFA tmp:manager_DFA.getListDFA()){
+            cmbListDFA.addItem(tmp.descripcion);
+        }
+        cmbListDFA.setSelectedIndex(-1);
+    }
+    
+    private void guardarDFA(){
+        Manager_DFA manager_DFA=new Manager_DFA(new JsonFile("DFAs"));
+        String temp_name=JOptionPane.showInputDialog("Descripcion: ");
+        manager_DFA.addNewDFA(temp_name,ck_contentSubstring.isSelected(), dfa);
+        cargarComboBox();
+    
+    }
+    
+    private void cargaPanelesNFA(){
+        pnlDFAtable.setVisible(false);
+        pnlNFAtable.setVisible(false);
+    
+    }
+    
+    private String[] getEstadosNFA(){
+       return txtStates_NFA.getText().split(",");
+    }
+    private String[] getAlfabetoNFA(){
+        return  txtAlfabeto_NFA.getText().split(",");
+    }
+    private String[] getEstadoAceptacionNFA(){
+        return txtEstadosAceptacion_NFA.getText().split(",");
+    }
+    private String getEstadoInicialNFA(){
+        return getEstadosNFA()[0];
+    }
+    
+    private void generarTablaNFA(){
+    
+        DefaultTableModel modelo= new DefaultTableModel();
+        String alfabeto[]=getAlfabetoNFA();
+        modelo.addColumn("STATE");
+        for (String caracter : alfabeto) {
+            modelo.addColumn(caracter);
+        }
+        Object rows[]= new Object[getAlfabeto().length+1];
+        for (String estado : getEstadosNFA()) {
+            modelo.addRow(new Object[]{estado});
+        }      
+        jTable2.setModel(modelo);
+    }
+    
+    private Estado[] getAllEstadosNFA(){
+        ArrayList<Estado> tmp_estados=new ArrayList<>();
+        for (int i = 0; i < jTable2.getRowCount(); i++) {
+            Estado tmp_estado=new Estado(jTable2.getValueAt(i,0).toString());
+            for (int j = 0; j < jTable2.getColumnCount(); j++) {
+                 String tmp_nextEstado;
+                if(jTable2.getValueAt(i,j)==null){
+                    jTable2.setValueAt(vacio, i,j);
+                }
+                tmp_nextEstado=jTable2.getValueAt(i,j).toString();
+               
+                for(String st:tmp_nextEstado.split(",")){
+                    tmp_estado.addTransicion(jTable2.getColumnName(j),st);
+                }   
+            }
+            tmp_estados.add(tmp_estado);
+       
+        }
+        return  tmp_estados.toArray(new Estado[tmp_estados.size()]);
+    }
+    
+    public NFA obtenerNFA(){
+         Estado[]tmpEstado=getAllEstadosNFA();
+        return new NFA(getEstadoInicialNFA(),getAlfabetoNFA(),getEstadoAceptacionNFA(),tmpEstado);
+    
+    }
+    
+    private void cargarDFAtoTabla(DFA Adfa){
+        DefaultTableModel modelo =new DefaultTableModel();
+        //cargar datos en la tabla
+        modelo.addColumn("Estados");
+        for(String alphatbet: Adfa.alfabeto){
+            modelo.addColumn(alphatbet);
+        }
+        for(String estado:Adfa.getEstados()){
+            modelo.addRow(new Object[]{estado});
+        }
+        jTable4.setModel(modelo);
+        int columnas=jTable4.getColumnCount();
+        int filas=jTable4.getModel().getRowCount();
+        for (int i = 0; i < filas; i++) {
+            for (int j = 1; j < columnas; j++){
+                String tmp_estado=jTable4.getValueAt(i,0).toString();
+                String tmp_input=jTable4.getColumnName(j);
+                
+                jTable4.setValueAt(Adfa.getTransicion(tmp_estado,tmp_input).getNewState(), i, j);
+            }
+        }
+
+     
+    }
     
    
 }

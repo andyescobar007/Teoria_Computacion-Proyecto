@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Main;
-import Clases.JF_MenuPrincipal;
 
 /**
  *
@@ -16,7 +15,7 @@ public class TC_DFA {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       JF_MenuPrincipal menu=new JF_MenuPrincipal();
+       MenuPrincipal menu=new MenuPrincipal();
        menu.setVisible(true);
     }
     

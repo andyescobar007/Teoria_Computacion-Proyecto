@@ -5,7 +5,9 @@
  */
 package Clases;
 
+import Main.MenuPrincipal;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -70,12 +72,13 @@ public class JF_Convert extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         tableDFA = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        txtStates1 = new javax.swing.JTextField();
-        btnGenerar1 = new javax.swing.JButton();
+        ckbEvaluaSubString = new javax.swing.JCheckBox();
+        txtDescripcion = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -279,13 +282,18 @@ public class JF_Convert extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel7.setText("Descripcion");
 
-        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setText("Evalua SubString");
+        ckbEvaluaSubString.setBackground(new java.awt.Color(255, 255, 255));
+        ckbEvaluaSubString.setText("Evalua SubString");
 
-        txtStates1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtDescripcion.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
-        btnGenerar1.setBackground(new java.awt.Color(255, 255, 255));
-        btnGenerar1.setText("Guardar");
+        btnGuardar.setBackground(new java.awt.Color(255, 255, 255));
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -298,9 +306,9 @@ public class JF_Convert extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnGenerar1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(txtStates1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ckbEvaluaSubString)
+                    .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -310,11 +318,11 @@ public class JF_Convert extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel7)
                 .addGap(1, 1, 1)
-                .addComponent(txtStates1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(ckbEvaluaSubString)
                 .addGap(18, 18, 18)
-                .addComponent(btnGenerar1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(34, Short.MAX_VALUE))
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -359,6 +367,15 @@ public class JF_Convert extends javax.swing.JFrame {
 
         jPanel5.add(jPanel7, "card3");
 
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("X");
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlAFDLayout = new javax.swing.GroupLayout(pnlAFD);
         pnlAFD.setLayout(pnlAFDLayout);
         pnlAFDLayout.setHorizontalGroup(
@@ -393,15 +410,21 @@ public class JF_Convert extends javax.swing.JFrame {
                                     .addComponent(txtStates))))
                         .addGap(49, 49, 49)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(pnlAFDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
+                        .addGroup(pnlAFDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(pnlAFDLayout.createSequentialGroup()
-                                .addGroup(pnlAFDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE))
-                                .addGap(241, 241, 241)
-                                .addComponent(txtStatecount, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(18, 18, 18)
+                                .addGroup(pnlAFDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addGroup(pnlAFDLayout.createSequentialGroup()
+                                        .addGroup(pnlAFDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE))
+                                        .addGap(241, 241, 241)
+                                        .addComponent(txtStatecount, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAFDLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(250, 250, 250))))
                     .addGroup(pnlAFDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)))
@@ -417,8 +440,9 @@ public class JF_Convert extends javax.swing.JFrame {
                                 .addGap(37, 37, 37)
                                 .addComponent(jLabel1))
                             .addGroup(pnlAFDLayout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addComponent(jLabel6)))
+                                .addGap(55, 55, 55)
+                                .addComponent(jLabel6))
+                            .addComponent(jLabel8))
                         .addGap(18, 18, 18)
                         .addGroup(pnlAFDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -454,7 +478,7 @@ public class JF_Convert extends javax.swing.JFrame {
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         mainPanel.add(pnlAFD, "card2");
@@ -503,6 +527,16 @@ public class JF_Convert extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ckLogActionPerformed
 
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        guardarDFA();
+        
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+      new MenuPrincipal().setVisible(true);
+      this.dispose();
+    }//GEN-LAST:event_jLabel8MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -535,9 +569,9 @@ public class JF_Convert extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearDFA;
     private javax.swing.JButton btnGenerar;
-    private javax.swing.JButton btnGenerar1;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JCheckBox ckLog;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox ckbEvaluaSubString;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -545,6 +579,7 @@ public class JF_Convert extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -567,11 +602,11 @@ public class JF_Convert extends javax.swing.JFrame {
     private javax.swing.JTable tableDFA;
     private javax.swing.JTable tableNFA;
     private javax.swing.JTextField txtAlfabeto;
+    private javax.swing.JTextField txtDescripcion;
     private javax.swing.JTextField txtEstadoInicial;
     private javax.swing.JTextField txtEstadosFinales;
     private javax.swing.JLabel txtStatecount;
     private javax.swing.JTextField txtStates;
-    private javax.swing.JTextField txtStates1;
     // End of variables declaration//GEN-END:variables
 
     
@@ -757,5 +792,18 @@ public class JF_Convert extends javax.swing.JFrame {
             }
         }
         return true;
+    }
+    
+    
+    
+    public void guardarDFA(){
+        String temp_descripcion=txtDescripcion.getText();
+        boolean temp_subString=ckbEvaluaSubString.isSelected();
+        DFA dfa=nfae.getDFA();
+        Manager_DFA manager_DFA=new Manager_DFA(new JsonFile("DFAs"));
+        manager_DFA.addNewDFA(temp_descripcion, temp_subString,dfa);
+        if(manager_DFA.findDFA(temp_descripcion)!=null){
+            JOptionPane.showMessageDialog(null,"EL Automata AFD ha sido guardado exitosamente");
+        }
     }
 }

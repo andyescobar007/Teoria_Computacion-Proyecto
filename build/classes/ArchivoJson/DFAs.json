@@ -4,742 +4,6 @@
     "validaSubString": true,
     "estados": [
       "q0",
-      "q1"
-    ],
-    "alfabeto": [
-      "a",
-      "b"
-    ],
-    "estadosAceptacion": [
-      "q0"
-    ],
-    "estadoInicial": "q0",
-    "estadoActual": "q0",
-    "Transiciones": [
-      {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q0"
-      },
-      {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q0"
-      },
-      {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q1"
-      }
-    ],
-    "transiciones": {
-      "b,q0": {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q0"
-      },
-      "a,q0": {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      "a,q1": {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q0"
-      },
-      "b,q1": {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q1"
-      }
-    }
-  },
-  {
-    "descripcion": "ANDY",
-    "validaSubString": true,
-    "estados": [
-      "q0",
-      "q1"
-    ],
-    "alfabeto": [
-      "a",
-      "b"
-    ],
-    "estadosAceptacion": [
-      "q0"
-    ],
-    "estadoInicial": "q0",
-    "estadoActual": "q0",
-    "Transiciones": [
-      {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q0"
-      },
-      {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q0"
-      },
-      {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q1"
-      }
-    ],
-    "transiciones": {
-      "b,q0": {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q0"
-      },
-      "a,q0": {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      "a,q1": {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q0"
-      },
-      "b,q1": {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q1"
-      }
-    }
-  },
-  {
-    "descripcion": "ANDY",
-    "validaSubString": true,
-    "estados": [
-      "q0",
-      "q1"
-    ],
-    "alfabeto": [
-      "a",
-      "b"
-    ],
-    "estadosAceptacion": [
-      "q0"
-    ],
-    "estadoInicial": "q0",
-    "estadoActual": "q0",
-    "Transiciones": [
-      {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q0"
-      },
-      {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q0"
-      },
-      {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q1"
-      }
-    ],
-    "transiciones": {
-      "b,q0": {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q0"
-      },
-      "a,q0": {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      "a,q1": {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q0"
-      },
-      "b,q1": {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q1"
-      }
-    }
-  },
-  {
-    "descripcion": "ANDY",
-    "validaSubString": true,
-    "estados": [
-      "q0",
-      "q1"
-    ],
-    "alfabeto": [
-      "a",
-      "b"
-    ],
-    "estadosAceptacion": [
-      "q0"
-    ],
-    "estadoInicial": "q0",
-    "estadoActual": "q0",
-    "Transiciones": [
-      {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q0"
-      },
-      {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q0"
-      },
-      {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q1"
-      }
-    ],
-    "transiciones": {
-      "b,q0": {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q0"
-      },
-      "a,q0": {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      "a,q1": {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q0"
-      },
-      "b,q1": {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q1"
-      }
-    }
-  },
-  {
-    "descripcion": "ANDY",
-    "validaSubString": true,
-    "estados": [
-      "q0",
-      "q1",
-      "q2"
-    ],
-    "alfabeto": [
-      "a",
-      "b"
-    ],
-    "estadosAceptacion": [
-      "q0",
-      "q2"
-    ],
-    "estadoInicial": "q0",
-    "estadoActual": "q0",
-    "Transiciones": [
-      {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q2"
-      },
-      {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q2"
-      },
-      {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q0"
-      },
-      {
-        "startState": "q2",
-        "input": "a",
-        "newState": "q0"
-      },
-      {
-        "startState": "q2",
-        "input": "b",
-        "newState": "q1"
-      }
-    ],
-    "transiciones": {
-      "a,q2": {
-        "startState": "q2",
-        "input": "a",
-        "newState": "q0"
-      },
-      "b,q0": {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q2"
-      },
-      "a,q0": {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      "b,q2": {
-        "startState": "q2",
-        "input": "b",
-        "newState": "q1"
-      },
-      "a,q1": {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q2"
-      },
-      "b,q1": {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q0"
-      }
-    }
-  },
-  {
-    "descripcion": "ANDY",
-    "validaSubString": true,
-    "estados": [
-      "q0",
-      "q1"
-    ],
-    "alfabeto": [
-      "a",
-      "b"
-    ],
-    "estadosAceptacion": [
-      "q0"
-    ],
-    "estadoInicial": "q0",
-    "estadoActual": "q0",
-    "Transiciones": [
-      {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q0"
-      },
-      {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q1"
-      },
-      {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q1"
-      },
-      {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q0"
-      }
-    ],
-    "transiciones": {
-      "b,q0": {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q1"
-      },
-      "a,q0": {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q0"
-      },
-      "a,q1": {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q1"
-      },
-      "b,q1": {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q0"
-      }
-    }
-  },
-  {
-    "descripcion": "ANDY",
-    "validaSubString": true,
-    "estados": [
-      "q0",
-      "q1"
-    ],
-    "alfabeto": [
-      "a",
-      "b"
-    ],
-    "estadosAceptacion": [
-      "q1"
-    ],
-    "estadoInicial": "q0",
-    "estadoActual": "q0",
-    "Transiciones": [
-      {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q0"
-      },
-      {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q1"
-      },
-      {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q1"
-      },
-      {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q0"
-      }
-    ],
-    "transiciones": {
-      "b,q0": {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q1"
-      },
-      "a,q0": {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q0"
-      },
-      "a,q1": {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q1"
-      },
-      "b,q1": {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q0"
-      }
-    }
-  },
-  {
-    "descripcion": "ANDY",
-    "validaSubString": true,
-    "estados": [
-      "q1",
-      "q2"
-    ],
-    "alfabeto": [
-      "a",
-      "b"
-    ],
-    "estadosAceptacion": [
-      "q1"
-    ],
-    "estadoInicial": "q1",
-    "estadoActual": "q1",
-    "Transiciones": [
-      {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q1"
-      },
-      {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q2"
-      },
-      {
-        "startState": "q2",
-        "input": "a",
-        "newState": "q2"
-      },
-      {
-        "startState": "q2",
-        "input": "b",
-        "newState": "q1"
-      }
-    ],
-    "transiciones": {
-      "a,q2": {
-        "startState": "q2",
-        "input": "a",
-        "newState": "q2"
-      },
-      "b,q2": {
-        "startState": "q2",
-        "input": "b",
-        "newState": "q1"
-      },
-      "a,q1": {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q1"
-      },
-      "b,q1": {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q2"
-      }
-    }
-  },
-  {
-    "descripcion": "ANDY",
-    "validaSubString": true,
-    "estados": [
-      "q0",
-      "q1"
-    ],
-    "alfabeto": [
-      "a",
-      "b"
-    ],
-    "estadosAceptacion": [
-      "q0"
-    ],
-    "estadoInicial": "q0",
-    "estadoActual": "q0",
-    "Transiciones": [
-      {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q0"
-      },
-      {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q1"
-      },
-      {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q0"
-      }
-    ],
-    "transiciones": {
-      "b,q0": {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q0"
-      },
-      "a,q0": {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      "a,q1": {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q1"
-      },
-      "b,q1": {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q0"
-      }
-    }
-  },
-  {
-    "descripcion": "ANDY",
-    "validaSubString": true,
-    "estados": [
-      "q0",
-      "q1",
-      "q2"
-    ],
-    "alfabeto": [
-      "a",
-      "b"
-    ],
-    "estadosAceptacion": [
-      "q0",
-      "q2"
-    ],
-    "estadoInicial": "q0",
-    "estadoActual": "q0",
-    "Transiciones": [
-      {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q2"
-      },
-      {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q2"
-      },
-      {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q0"
-      },
-      {
-        "startState": "q2",
-        "input": "a",
-        "newState": "q0"
-      },
-      {
-        "startState": "q2",
-        "input": "b",
-        "newState": "q1"
-      }
-    ],
-    "transiciones": {
-      "a,q2": {
-        "startState": "q2",
-        "input": "a",
-        "newState": "q0"
-      },
-      "b,q0": {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q2"
-      },
-      "a,q0": {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      "b,q2": {
-        "startState": "q2",
-        "input": "b",
-        "newState": "q1"
-      },
-      "a,q1": {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q2"
-      },
-      "b,q1": {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q0"
-      }
-    }
-  },
-  {
-    "descripcion": "ANDY",
-    "validaSubString": true,
-    "estados": [
-      "q0",
-      "q1",
-      "q2"
-    ],
-    "alfabeto": [
-      "a",
-      "b"
-    ],
-    "estadosAceptacion": [
-      "q0"
-    ],
-    "estadoInicial": "q0",
-    "estadoActual": "q0",
-    "Transiciones": [
-      {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q2"
-      },
-      {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q2"
-      },
-      {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q0"
-      },
-      {
-        "startState": "q2",
-        "input": "a",
-        "newState": "q0"
-      },
-      {
-        "startState": "q2",
-        "input": "b",
-        "newState": "q1"
-      }
-    ],
-    "transiciones": {
-      "a,q2": {
-        "startState": "q2",
-        "input": "a",
-        "newState": "q0"
-      },
-      "b,q0": {
-        "startState": "q0",
-        "input": "b",
-        "newState": "q2"
-      },
-      "a,q0": {
-        "startState": "q0",
-        "input": "a",
-        "newState": "q1"
-      },
-      "b,q2": {
-        "startState": "q2",
-        "input": "b",
-        "newState": "q1"
-      },
-      "a,q1": {
-        "startState": "q1",
-        "input": "a",
-        "newState": "q2"
-      },
-      "b,q1": {
-        "startState": "q1",
-        "input": "b",
-        "newState": "q0"
-      }
-    }
-  },
-  {
-    "descripcion": "ANDY",
-    "validaSubString": true,
-    "estados": [
-      "q0",
       "q1",
       "q2"
     ],
@@ -814,6 +78,535 @@
         "startState": "q1",
         "input": "b",
         "newState": "q0"
+      }
+    }
+  },
+  {
+    "descripcion": "GUARDADO1",
+    "validaSubString": false,
+    "estados": [
+      "q0",
+      "q1",
+      "q2"
+    ],
+    "alfabeto": [
+      "a",
+      "b"
+    ],
+    "estadosAceptacion": [
+      "q2"
+    ],
+    "estadoInicial": "q0",
+    "estadoActual": "q0",
+    "Transiciones": [
+      {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q2"
+      },
+      {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q1"
+      },
+      {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q0"
+      },
+      {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q2"
+      },
+      {
+        "startState": "q2",
+        "input": "a",
+        "newState": "q1"
+      },
+      {
+        "startState": "q2",
+        "input": "b",
+        "newState": "q0"
+      }
+    ],
+    "transiciones": {
+      "a,q2": {
+        "startState": "q2",
+        "input": "a",
+        "newState": "q1"
+      },
+      "b,q0": {
+        "startState": "q0",
+        "input": "b",
+        "newState": "q1"
+      },
+      "a,q0": {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q2"
+      },
+      "b,q2": {
+        "startState": "q2",
+        "input": "b",
+        "newState": "q0"
+      },
+      "a,q1": {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q0"
+      },
+      "b,q1": {
+        "startState": "q1",
+        "input": "b",
+        "newState": "q2"
+      }
+    }
+  },
+  {
+    "descripcion": "EjercicioClase",
+    "validaSubString": false,
+    "estados": [
+      "p",
+      "p,q,r",
+      "q,r",
+      "r",
+      "qm"
+    ],
+    "alfabeto": [
+      "a",
+      "b",
+      "c"
+    ],
+    "estadosAceptacion": [
+      "p,q,r",
+      "q,r",
+      "r"
+    ],
+    "estadoInicial": "p",
+    "estadoActual": "p",
+    "Transiciones": [
+      {
+        "startState": "p",
+        "input": "a",
+        "newState": "p,q,r"
+      },
+      {
+        "startState": "p",
+        "input": "b",
+        "newState": "q,r"
+      },
+      {
+        "startState": "p",
+        "input": "c",
+        "newState": "p,q,r"
+      },
+      {
+        "startState": "p,q,r",
+        "input": "a",
+        "newState": "p,q,r"
+      },
+      {
+        "startState": "p,q,r",
+        "input": "b",
+        "newState": "q,r"
+      },
+      {
+        "startState": "p,q,r",
+        "input": "c",
+        "newState": "p,q,r"
+      },
+      {
+        "startState": "q,r",
+        "input": "a",
+        "newState": "p,q,r"
+      },
+      {
+        "startState": "q,r",
+        "input": "b",
+        "newState": "r"
+      },
+      {
+        "startState": "q,r",
+        "input": "c",
+        "newState": "p,q,r"
+      },
+      {
+        "startState": "r",
+        "input": "a",
+        "newState": "qm"
+      },
+      {
+        "startState": "r",
+        "input": "b",
+        "newState": "qm"
+      },
+      {
+        "startState": "r",
+        "input": "c",
+        "newState": "qm"
+      },
+      {
+        "startState": "qm",
+        "input": "a",
+        "newState": "qm"
+      },
+      {
+        "startState": "qm",
+        "input": "b",
+        "newState": "qm"
+      },
+      {
+        "startState": "qm",
+        "input": "c",
+        "newState": "qm"
+      }
+    ],
+    "transiciones": {
+      "a,q,r": {
+        "startState": "q,r",
+        "input": "a",
+        "newState": "p,q,r"
+      },
+      "a,p,q,r": {
+        "startState": "p,q,r",
+        "input": "a",
+        "newState": "p,q,r"
+      },
+      "a,p": {
+        "startState": "p",
+        "input": "a",
+        "newState": "p,q,r"
+      },
+      "c,p": {
+        "startState": "p",
+        "input": "c",
+        "newState": "p,q,r"
+      },
+      "b,p,q,r": {
+        "startState": "p,q,r",
+        "input": "b",
+        "newState": "q,r"
+      },
+      "c,q,r": {
+        "startState": "q,r",
+        "input": "c",
+        "newState": "p,q,r"
+      },
+      "a,r": {
+        "startState": "r",
+        "input": "a",
+        "newState": "qm"
+      },
+      "b,p": {
+        "startState": "p",
+        "input": "b",
+        "newState": "q,r"
+      },
+      "c,r": {
+        "startState": "r",
+        "input": "c",
+        "newState": "qm"
+      },
+      "c,qm": {
+        "startState": "qm",
+        "input": "c",
+        "newState": "qm"
+      },
+      "b,r": {
+        "startState": "r",
+        "input": "b",
+        "newState": "qm"
+      },
+      "a,qm": {
+        "startState": "qm",
+        "input": "a",
+        "newState": "qm"
+      },
+      "b,qm": {
+        "startState": "qm",
+        "input": "b",
+        "newState": "qm"
+      },
+      "c,p,q,r": {
+        "startState": "p,q,r",
+        "input": "c",
+        "newState": "p,q,r"
+      },
+      "b,q,r": {
+        "startState": "q,r",
+        "input": "b",
+        "newState": "r"
+      }
+    }
+  },
+  {
+    "descripcion": "Ejercicio1",
+    "validaSubString": false,
+    "estados": [
+      "q0",
+      "q1",
+      "q2",
+      "q3"
+    ],
+    "alfabeto": [
+      "0",
+      "1"
+    ],
+    "estadosAceptacion": [
+      "q3"
+    ],
+    "estadoInicial": "q0",
+    "estadoActual": "q0",
+    "Transiciones": [
+      {
+        "startState": "q0",
+        "input": "0",
+        "newState": "q1"
+      },
+      {
+        "startState": "q0",
+        "input": "1",
+        "newState": "q2"
+      },
+      {
+        "startState": "q1",
+        "input": "0",
+        "newState": "q0"
+      },
+      {
+        "startState": "q1",
+        "input": "1",
+        "newState": "q3"
+      },
+      {
+        "startState": "q2",
+        "input": "0",
+        "newState": "q3"
+      },
+      {
+        "startState": "q2",
+        "input": "1",
+        "newState": "q0"
+      },
+      {
+        "startState": "q3",
+        "input": "0",
+        "newState": "q2"
+      },
+      {
+        "startState": "q3",
+        "input": "1",
+        "newState": "q1"
+      }
+    ],
+    "transiciones": {
+      "0,q3": {
+        "startState": "q3",
+        "input": "0",
+        "newState": "q2"
+      },
+      "0,q1": {
+        "startState": "q1",
+        "input": "0",
+        "newState": "q0"
+      },
+      "1,q2": {
+        "startState": "q2",
+        "input": "1",
+        "newState": "q0"
+      },
+      "0,q2": {
+        "startState": "q2",
+        "input": "0",
+        "newState": "q3"
+      },
+      "1,q3": {
+        "startState": "q3",
+        "input": "1",
+        "newState": "q1"
+      },
+      "1,q0": {
+        "startState": "q0",
+        "input": "1",
+        "newState": "q2"
+      },
+      "0,q0": {
+        "startState": "q0",
+        "input": "0",
+        "newState": "q1"
+      },
+      "1,q1": {
+        "startState": "q1",
+        "input": "1",
+        "newState": "q3"
+      }
+    }
+  },
+  {
+    "descripcion": "Ejercicio2",
+    "validaSubString": false,
+    "estados": [
+      "q0",
+      "q1,q3",
+      "q2",
+      "q4",
+      "q1",
+      "q3",
+      "qm"
+    ],
+    "alfabeto": [
+      "a",
+      "b"
+    ],
+    "estadosAceptacion": [
+      "q4",
+      "q1"
+    ],
+    "estadoInicial": "q0",
+    "estadoActual": "q0",
+    "Transiciones": [
+      {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1,q3"
+      },
+      {
+        "startState": "q0",
+        "input": "b",
+        "newState": "qm"
+      },
+      {
+        "startState": "q1,q3",
+        "input": "a",
+        "newState": "q2"
+      },
+      {
+        "startState": "q1,q3",
+        "input": "b",
+        "newState": "q4"
+      },
+      {
+        "startState": "q2",
+        "input": "a",
+        "newState": "qm"
+      },
+      {
+        "startState": "q2",
+        "input": "b",
+        "newState": "q1"
+      },
+      {
+        "startState": "q4",
+        "input": "a",
+        "newState": "q3"
+      },
+      {
+        "startState": "q4",
+        "input": "b",
+        "newState": "qm"
+      },
+      {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q2"
+      },
+      {
+        "startState": "q1",
+        "input": "b",
+        "newState": "qm"
+      },
+      {
+        "startState": "q3",
+        "input": "a",
+        "newState": "qm"
+      },
+      {
+        "startState": "q3",
+        "input": "b",
+        "newState": "q4"
+      },
+      {
+        "startState": "qm",
+        "input": "a",
+        "newState": "qm"
+      },
+      {
+        "startState": "qm",
+        "input": "b",
+        "newState": "qm"
+      }
+    ],
+    "transiciones": {
+      "a,q2": {
+        "startState": "q2",
+        "input": "a",
+        "newState": "qm"
+      },
+      "b,q4": {
+        "startState": "q4",
+        "input": "b",
+        "newState": "qm"
+      },
+      "a,q3": {
+        "startState": "q3",
+        "input": "a",
+        "newState": "qm"
+      },
+      "b,q3": {
+        "startState": "q3",
+        "input": "b",
+        "newState": "q4"
+      },
+      "a,q1,q3": {
+        "startState": "q1,q3",
+        "input": "a",
+        "newState": "q2"
+      },
+      "a,q4": {
+        "startState": "q4",
+        "input": "a",
+        "newState": "q3"
+      },
+      "b,q1,q3": {
+        "startState": "q1,q3",
+        "input": "b",
+        "newState": "q4"
+      },
+      "b,q0": {
+        "startState": "q0",
+        "input": "b",
+        "newState": "qm"
+      },
+      "a,q0": {
+        "startState": "q0",
+        "input": "a",
+        "newState": "q1,q3"
+      },
+      "b,q2": {
+        "startState": "q2",
+        "input": "b",
+        "newState": "q1"
+      },
+      "a,q1": {
+        "startState": "q1",
+        "input": "a",
+        "newState": "q2"
+      },
+      "b,q1": {
+        "startState": "q1",
+        "input": "b",
+        "newState": "qm"
+      },
+      "a,qm": {
+        "startState": "qm",
+        "input": "a",
+        "newState": "qm"
+      },
+      "b,qm": {
+        "startState": "qm",
+        "input": "b",
+        "newState": "qm"
       }
     }
   }

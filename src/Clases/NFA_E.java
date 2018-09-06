@@ -259,6 +259,10 @@ public class NFA_E {
         for(String alphatb:alfabeto){
             if(!alphatb.equals(epsilon)){
                 Transicion t=obtenerTransicion(estadoInicial,cerradura(alphatb));
+                if(t.getNewState().charAt(0)==','){
+                    t.setNewState(t.getNewState().substring(1,t.getNewState().length()));
+                }
+               
                 arrayListTrasiciones.add(new Transicion(estadoInicial, alphatb, t.getNewState()));
             }
         }
@@ -281,6 +285,11 @@ public class NFA_E {
                 estadosExistentes.add(new Estado(trans.getNewState()));
             }            
         }
+        if(existenTransicionVacias(arrayListTrasiciones)){
+            agregarEstadoMuerto(arrayListTrasiciones);
+            
+        }
+        
         Transicion []newTransiciones=new  Transicion[arrayListTrasiciones.size()];
         for (int i = 0; i < arrayListTrasiciones.size(); i++) {
             newTransiciones[i] = arrayListTrasiciones.get(i);
@@ -342,16 +351,65 @@ public class NFA_E {
             }
         }
         return true;
-        
+    }
     
+    private String[] getEstadosAceptacionDFA(){
+        ArrayList<String>estadosDeAceptacion=new ArrayList<>();
+        for (String estadoAceptado : estadosAceptacion) {
+            for(String estado:getEstadosDFA()){
+              if(estado.contains(estadoAceptado)&& !Arrays.asList(estadosDeAceptacion.toArray()).contains(estado)){
+                  estadosDeAceptacion.add(estado);
+              }
+            } 
+        }
+        String []estados_aceptacion=new String[estadosDeAceptacion.size()];
+        estados_aceptacion=estadosDeAceptacion.toArray(estados_aceptacion);
+        return estados_aceptacion;
+    }
+    
+    private String[] getAlfabeto(){
+        ArrayList<String>ArrayList_Alfabeto=new ArrayList<>();
+        for(String alphabet:alfabeto){
+            if(!alphabet.equals(epsilon) && !Arrays.asList(ArrayList_Alfabeto.toArray()).contains(alfabeto)){
+                ArrayList_Alfabeto.add(alphabet);
+            }
+        }
+        return ArrayList_Alfabeto.toArray(new String[ArrayList_Alfabeto.size()]);
+    }
+    
+    public DFA getDFA(){
+        return new DFA(getEstadosDFA(),getAlfabeto(),getEstadosAceptacionDFA(),getTrancisionesDFA(),estadoInicial);
+    }
+  
+
+    private void agregarEstadoMuerto(ArrayList<Transicion> arrayListTrasiciones) {
+        for(String alphabet:getAlfabeto()){
+            arrayListTrasiciones.add(new Transicion("qm",alphabet,"qm"));
+        }
+        estadosExistentes.add(new Estado("qm"));
+        for (int i = 0; i < arrayListTrasiciones.size(); i++) {
+            if(arrayListTrasiciones.get(i).getNewState().equals(vacio)){
+                arrayListTrasiciones.get(i).setNewState("qm");
+            }
+        }
+    }
+
+    private boolean existenTransicionVacias(ArrayList<Transicion> arrayListTrasiciones) {
+        for(Transicion t:arrayListTrasiciones){
+           if(t.getNewState().equals(vacio)){
+               return true;
+           }
+       }
+       return false;
     }
     
     
-    /**
+    
+      /**
      * 
      * @param args 
      */
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         String tempEstadoI="q0";
         String []tempEstadosAceptacion=("q2").split(",");
         String []tempEstados=("q0,q1,q2").split(",");
@@ -359,7 +417,7 @@ public class NFA_E {
         String vacio="ø";
         String []tempAlfabeto=("Ɛ,a,b,c").split(",");
         Transicion[]tempTransiciones=new Transicion[tempEstados.length*tempAlfabeto.length];
-        /*tempTransiciones[0]=new Transicion("q0",epsilon, "q1,q2");
+        tempTransiciones[0]=new Transicion("q0",epsilon, "q1,q2");
         tempTransiciones[1]=new Transicion("q0","a", "q2");
         tempTransiciones[2]=new Transicion("q0","b",vacio);
         
@@ -370,8 +428,8 @@ public class NFA_E {
         tempTransiciones[6]=new Transicion("q2",epsilon, "q0");
         tempTransiciones[7]=new Transicion("q2","a", vacio);
         tempTransiciones[8]=new Transicion("q2","b","q1");
-      */
-       
+      
+      
         tempTransiciones[0]=new Transicion("q0",epsilon, "q1,q2");
         tempTransiciones[1]=new Transicion("q0","a", vacio);
         tempTransiciones[2]=new Transicion("q0","b","q1");
@@ -413,12 +471,11 @@ public class NFA_E {
         for(Transicion t:transicionesDFA){
             System.out.println("EA: "+t.getStartState()+" input: "+t.getInput()+" ES: "+t.getNewState());
         }
+        for(String tmp:nfae.getAlfabeto()){
+            System.out.println(tmp);
+            
+        }
        
-    }
-
-    
+    }*/
    
-
-    
-    
 }
